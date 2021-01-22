@@ -3,26 +3,26 @@
 // 크레인 인형뽑기 게임
 
 function solution(board, moves) {
-  var answer = 0;
-  const stack = [];
-  moves.forEach(column => {
-    const flag = stack.length;
-    board.map((row) => {
-      if (stack.length !== flag) return;
+  let answer = 0;
 
-      const currentNumber = row[column - 1];
-      if (currentNumber !== 0) {
-        row[column - 1] = 0;
-        if (stack.length > 0 && stack[stack.length - 1] === currentNumber) {
-          answer += 2;
-          // stack.slice(0, length - 1);
-          return stack.pop();
-        }
-        return stack.push(currentNumber);
+  const bucket = [];
+  moves.forEach(column => {
+    const bucketCount = bucket.length;
+    board.map((row) => {
+      if (bucket.length !== bucketCount) return;
+
+      const target = row[column - 1];
+      if (target === 0) return;
+
+      row[column - 1] = 0;
+      if (bucket.length > 0 && bucket[bucket.length - 1] === target) {
+        answer += 2;
+
+        return bucket.pop();
       }
-      return;
+      return bucket.push(target);
     })
-  })
+  });
   return answer;
 }
 
