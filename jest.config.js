@@ -8,7 +8,7 @@ module.exports = {
     "tsx",
     "js"
   ],
-  "testRegex": "(/__tests__/.*(\\.|/)(test|spec))\\.js?$",
+  // "testRegex": "(/__tests__/.*(\\.|/)(test|spec))\\.js?$",
   "transformIgnorePatterns": [
     "<rootDir>/node_modules/"
   ],
