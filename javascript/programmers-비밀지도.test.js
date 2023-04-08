@@ -32,7 +32,7 @@ const sum = (n,num1, num2) =>{
   return result;
 };
 
-test('sum',()=>{
+describe('sum',()=>{
   expect(sum(5,[1001, 10100, 11100, 10010, 1011], [11110, 1, 10101, 10001, 11100]))
   .toEqual([12111,10101,21201,20011,12111]);
 })
@@ -62,7 +62,7 @@ function solution(n, arr1, arr2) {
   return numToMap(n, sumArr);
 }
 
-test('solution',() => {
+describe('solution',() => {
   expect(
     solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))
     .toEqual(["#####","# # #", "### #", "#  ##", "#####"]);
